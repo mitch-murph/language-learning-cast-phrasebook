@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cast Phrasebook (test)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    google-cast-launcher { width: 28px; height: 28px; vertical-align: middle; }
+    #status { color: #555; margin: 0.75rem 0; }
+    #controls { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    #namespace { flex: 1; min-width: 120px; }
+    ul#phrase-list { list-style: none; padding: 0; }
+    ul#phrase-list li { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid #eee; gap: 0.5rem; }
+    ul#phrase-list li span { flex: 1; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Cast Phrasebook <google-cast-launcher></google-cast-launcher></h1>
+  <p id="status">Loading Cast SDK…</p>
+
+  <div id="controls">
+    <input id="namespace" type="text" placeholder="namespace (blank = shared library)" />
+    <button id="load-btn">Load phrases</button>
+    <button id="queue-btn">Cast all as queue</button>
+    <button id="stop-btn">Stop</button>
+  </div>
+
+  <ul id="phrase-list"></ul>
+
+  <script src="config.js"></script>
+  <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  <script src="app.js"></script>
+</body>
+</html>
